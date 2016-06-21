@@ -1,6 +1,9 @@
-var words = ['pie', 'pizza', 'cake', 'pizza']
+var words = [];
+var wordCount = [];
 var uniqueWords = [];
 
+$(function() {
+  words = $("#userInput").val().split(' ');
   var count = function(input) {
     var counter = 0;
     words.forEach(function(word) {
@@ -8,12 +11,12 @@ var uniqueWords = [];
         counter += 1;
       };
     });
+    wordCount.push(input + " " + counter);
     console.log(input, counter);
   };
 
-words.forEach(function(word) {
-count(word);
+  words.forEach(function(word) {
+  count(word);
+  });
+
 });
-// if (counter == 0) {
-//   uniqueWords.push(word);
-// }
